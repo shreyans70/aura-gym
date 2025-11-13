@@ -1,0 +1,288 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aura Gym — Strength & Energy</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Meta theme -->
+  <meta name="theme-color" content="#111">
+</head>
+<body>
+
+  <!-- Loading screen -->
+  <div id="loader" class="loader">
+    <div class="loader-inner">
+      <div class="pulse"></div>
+      <h2>Loading Aura Gym...</h2>
+    </div>
+  </div>
+
+  <!-- Startup questionnaire overlay -->
+  <div id="quizOverlay" class="overlay">
+    <div class="quiz-card">
+      <h2>Welcome to AURA GYM</h2>
+      <p>Quick Questions to personalize your experience</p>
+
+      <form id="quizForm">
+        <div class="mcq">
+          <label>When do you want to join?</label>
+          <div class="choices">
+            <button type="button" data-value="Today">Today</button>
+            <button type="button" data-value="Next Week">Next Week</button>
+            <button type="button" data-value="Next Month">Next Month</button>
+          </div>
+        </div>
+
+        <div class="mcq">
+          <label>Your Fitness Goal?</label>
+          <div class="choices">
+            <button type="button" data-value="Weight Gain">Weight Gain</button>
+            <button type="button" data-value="Fat Loss">Fat Loss</button>
+            <button type="button" data-value="Muscle Building">Muscle Building</button>
+            <button type="button" data-value="General Fitness">General Fitness</button>
+          </div>
+        </div>
+
+        <div class="mcq">
+          <label>Preferred Time Slot?</label>
+          <div class="choices">
+            <button type="button" data-value="Morning">Morning</button>
+            <button type="button" data-value="Afternoon">Afternoon</button>
+            <button type="button" data-value="Evening">Evening</button>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your full name" required>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" placeholder="+91 9XXXXXXXXX" required>
+        </div>
+
+        <div class="form-actions">
+          <button id="submitQuiz" type="submit" class="btn primary">Get Started</button>
+          <button id="skipQuiz" type="button" class="btn ghost">Skip</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Sticky Navbar -->
+  <header id="mainHeader" class="header">
+    <div class="container nav-inner">
+      <div class="brand" onclick="scrollToSection('home')">
+        <span class="logo">AURA</span> GYM
+      </div>
+
+      <nav class="nav" id="navLinks">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#diet" class="nav-link">Diet Plan</a>
+        <a href="#workout" class="nav-link">Workout Plan</a>
+        <a href="#trainers" class="nav-link">Trainers</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="musicToggle" class="icon-btn" title="Toggle background music">🎵</button>
+        <button id="openQuiz" class="btn small">Update Quiz</button>
+        <button id="menuBtn" class="icon-btn mobile-only">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Parallax / Hero -->
+  <section id="home" class="hero">
+    <div class="hero-slideshow">
+      <!-- Slideshow images (background cover) -->
+      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1554284126-aa88f22d8d12?auto=format&fit=crop&w=1500&q=80')"></div>
+      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=1500&q=80')"></div>
+      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1526401485004-ef3a3bdc3d10?auto=format&fit=crop&w=1500&q=80')"></div>
+    </div>
+
+    <div class="hero-content container">
+      <h1 class="glow">Sculpt. Sweat. Shine.</h1>
+      <p>Join Aura Gym and transform your body with science-backed plans and respected trainers.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="#workout">Explore Programs</a>
+        <a class="btn ghost" href="#contact">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Ambition -->
+  <section id="ambition" class="section container">
+    <div class="section-inner">
+      <h2 class="section-title">Our Ambition</h2>
+      <p class="lead">At Aura Gym, our goal is to empower every individual to reach their peak fitness potential through discipline, guidance, and passion.</p>
+    </div>
+  </section>
+
+  <!-- Fee Structure -->
+  <section id="fees" class="section dark">
+    <div class="container grid-2">
+      <div class="fees-card card-anim">
+        <div class="icon">💳</div>
+        <h3>Monthly Plan</h3>
+        <p class="price">₹999 <span>/ month</span></p>
+        <ul>
+          <li>Unlimited Gym Access</li>
+          <li>1 Free Diet Consultation</li>
+          <li>Access to Group Classes</li>
+        </ul>
+        <a class="btn primary">Join Monthly</a>
+      </div>
+
+      <div class="fees-card card-anim">
+        <div class="icon">🏆</div>
+        <h3>Yearly Plan</h3>
+        <p class="price">₹9999 <span>/ year</span></p>
+        <ul>
+          <li>Save 2 months free</li>
+          <li>Personal Training Discount</li>
+          <li>Priority Booking</li>
+        </ul>
+        <a class="btn primary">Join Yearly</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diet Plan -->
+  <section id="diet" class="section container">
+    <h2 class="section-title">7-Day Diet Plan for Weight Gain</h2>
+
+    <div class="toggle-row">
+      <button id="vegBtn" class="btn toggle active">Veg</button>
+      <button id="nonvegBtn" class="btn toggle">Non-Veg</button>
+    </div>
+
+    <div id="dietPlans" class="diet-grid">
+      <!-- JavaScript will populate 7 collapsible day cards -->
+    </div>
+  </section>
+
+  <!-- Workout Plan -->
+  <section id="workout" class="section dark">
+    <div class="container">
+      <h2 class="section-title">6-Day Workout Routine</h2>
+      <p class="lead">Built for progressive strength and hypertrophy. Each session lasts ~45 minutes.</p>
+
+      <div class="workout-grid" id="workoutGrid">
+        <!-- 6 workout cards will be populated here by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Trainers -->
+  <section id="trainers" class="section container">
+    <h2 class="section-title">Our Trainers</h2>
+
+    <div class="trainers-grid">
+      <!-- Trainer 1 -->
+      <div class="trainer-card card-anim">
+         <img src="images/trainer1.jpg" alt="Prabhjot Singh" width="200" heght="250">
+        <h3>Prabhjot Singh</h3>
+        <p class="muted">8 years — Bodybuilding</p>
+        <p>Dedicated to strength and transformation.</p>
+      </div>
+
+      <!-- Trainer 2 -->
+      <div class="trainer-card card-anim">
+         <img src="images/trainer2.jpg" alt="Akashdeep Singh" width="200" height="200">
+        <p class="muted">6 years — Strength & Functional</p>
+        <p>Focus on balance and posture.</p>
+      </div>
+
+      <!-- Trainer 3 -->
+      <div class="trainer-card card-anim">
+        <img src="images/trainer3.jpg" alt="Gurbaaj Singh" width="200" height="200">
+        <h3>Gurbaaj Singh</h3>
+        <p class="muted">5 years — Yoga & Flexibility</p>
+        <p>Teaches calmness and focus.</p>
+      </div>
+
+      <!-- Trainer 4 -->
+      <div class="trainer-card card-anim">
+        <img src="images/trainer4.jpg" alt="Harwinder Singh" width="200" height="250">
+        <p class="muted">5 years — Dance & Zumba</p>
+        <p>Promotes fitness through rhythm and energy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section container">
+    <h2 class="section-title">Contact Our Manager</h2>
+
+    <div class="contact-grid">
+      <div class="manager-card card-anim">
+        <img src="images/manager.jpg" alt="Shreyans prajapati" width="300" height="350">
+        <h3>Shreyans Prajapati</h3>
+        <p class="muted">Manager</p>
+        <p><strong>Phone:</strong> 8957144876</p>
+        <p><strong>Email:</strong> shreyansprajapati7081@gmail.com</p>
+      </div>
+
+      <div class="contact-form card-anim">
+        <form id="contactForm">
+          <div class="field">
+            <label for="cname">Name</label>
+            <input id="cname" name="cname" type="text" required>
+          </div>
+
+          <div class="field">
+            <label for="cemail">Email</label>
+            <input id="cemail" name="cemail" type="email" required>
+          </div>
+
+          <div class="field">
+            <label for="cmessage">Message</label>
+            <textarea id="cmessage" name="cmessage" rows="5" required></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Send Message</button>
+          </div>
+        </form>
+
+        <div class="socials">
+          <a href="#" aria-label="Instagram">Instagram</a> ·
+          <a href="#" aria-label="Facebook">Facebook</a> ·
+          <a href="#" aria-label="YouTube">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scroll to top -->
+  <button id="scrollTop" class="scroll-top" title="Back to top">↑</button>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Aura Gym. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
